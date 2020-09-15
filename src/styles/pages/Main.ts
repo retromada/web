@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.section`
+export const Wrapper = styled.section`
   position: absolute;
   margin: 230px 35px 0 30px;
   cursor: default;
@@ -13,7 +13,7 @@ const Wrapper = styled.section`
   }
 `
 
-const Team = styled.div`
+export const Team = styled.div`
   width: 175px;
   height: 100px;
 
@@ -22,8 +22,3 @@ const Team = styled.div`
     font-size: 14px;
   }
 `
-
-export {
-  Wrapper,
-  Team
-}

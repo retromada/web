@@ -19,7 +19,7 @@
     },
     "ecmaVersion": 12,
     "project": "./tsconfig.json",
-    "sourceType": "module",
+    "sourceType": "module"
   },
   "plugins": [
     "react",
@@ -36,9 +36,9 @@
           "/^react/",
           "/^next/",
           "module",
-          ["parent", "sibling", "index"],
+          ["parent", "sibling", "index"]
         ],
-        "alphabetize": { "order": "asc", "ignoreCase": true },
+        "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
     "prettier/prettier": "error",

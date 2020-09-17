@@ -2,9 +2,10 @@ import React from 'react'
 
 import { useFetch } from '../hooks/useFetch'
 import { Wrapper, Team } from '../styles/pages/Main'
+import { DevelopersTeamResponse } from '../responses'
 
 const Main: React.FC = () => {
-  const { data } = useFetch('/api/team')
+  const { data } = useFetch<DevelopersTeamResponse[]>('/api/team')
 
   return (
     <>
@@ -12,7 +13,7 @@ const Main: React.FC = () => {
         <Team>
           {data?.map((dev) => (
             <p key={dev.id}>
-              <strong>XXX</strong>
+              <strong title={dev.department.name}>{dev.department.acronym}</strong>
               <a>{dev.username}</a>
             </p>
           ))}

@@ -1,4 +1,8 @@
+export interface FetcherQueryOptions {}
+
+export interface FetchApiOptions {}
+
 export interface FetcherOptions {
-  query?: Object
-  options?: Object
+  query?: FetcherQueryOptions
+  options?: FetchApiOptions
 }

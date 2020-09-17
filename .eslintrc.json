@@ -41,6 +41,10 @@
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
+    "space-before-function-paren": ["error", "never"],
+    "prettier": {
+      "space-before-function-paren": ["error", "never"]
+    },
     "prettier/prettier": "error",
     "react/prop-types": "off"
   }

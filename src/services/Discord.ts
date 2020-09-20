@@ -1,7 +1,7 @@
 import fetcher from '../utils/fetcher'
 import { FetcherOptions } from '../types'
 
-const API_URL: string = 'https://discordapp.com/api'
+const API_URL = 'https://discordapp.com/api'
 
 export default class Discord {
   public static request (endpoint: string, {

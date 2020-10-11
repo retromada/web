@@ -1,9 +1,9 @@
-export interface DeveloperTeamDepartment {
+export interface DeveloperDepartment {
   acronym: string
   name: string
 }
 
-export interface DeveloperTeamRoles {
+export interface DeveloperRoles {
   id: string
   name: string
 }
@@ -13,6 +13,6 @@ export interface DevelopersTeamResponse {
   username: string
   discriminator: string
   avatar: string
-  department: DeveloperTeamDepartment
-  roles: DeveloperTeamRoles[]
+  department: DeveloperDepartment
+  roles: DeveloperRoles[]
 }

@@ -28,7 +28,7 @@ async function fetchDevelopersTeam (guildID = process.env.GUILD_ID): Promise<Dev
       const departmentRole = _roles.find(
         ({ position }) =>
           position === Math.max(..._roles.map(({ position }) => position))
-      ).name
+      )
 
       return {
         id,
@@ -36,8 +36,9 @@ async function fetchDevelopersTeam (guildID = process.env.GUILD_ID): Promise<Dev
         discriminator,
         avatar,
         department: {
-          acronym: departmentRole.replace(/[a-z]+[^]/g, ''),
-          name: departmentRole
+          acronym: departmentRole.name.replace(/[a-z]+[^]/g, ''),
+          name: departmentRole.name,
+          hexColor: `#${departmentRole.color.toString(16).padStart(6, 'f')}`
         },
         roles: _roles.map(({ id, name }) => ({ id, name }))
       }

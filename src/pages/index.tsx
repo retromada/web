@@ -13,7 +13,7 @@ const Main: React.FC = () => {
         <Team>
           {data?.map((dev) => (
             <p key={dev.id}>
-              <strong title={dev.department.name}>{dev.department.acronym}</strong>
+              <strong style={{color: dev.department.hexColor}} title={dev.department.name}>{dev.department.acronym}</strong>
               <a>{dev.username}</a>
             </p>
           ))}

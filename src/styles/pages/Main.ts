@@ -1,6 +1,12 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+`
+
+export const Container = styled.div`
   position: absolute;
   margin: 230px 35px 0 30px;
   cursor: default;

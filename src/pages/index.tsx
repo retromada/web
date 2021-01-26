@@ -1,15 +1,15 @@
 import React from 'react'
 
 import { useFetch } from '../hooks/useFetch'
-import { Wrapper, Team } from '../styles/pages/Main'
+import { Wrapper, Container, Team } from '../styles/pages/Main'
 import { DevelopersTeamResponse } from '../responses'
 
 const Main: React.FC = () => {
   const { data } = useFetch<DevelopersTeamResponse[]>('/api/team')
 
   return (
-    <>
-      <Wrapper>
+    <Wrapper>
+      <Container>
         <Team>
           {data?.map((dev) => (
             <p key={dev.id}>
@@ -18,9 +18,9 @@ const Main: React.FC = () => {
             </p>
           ))}
         </Team>
-      </Wrapper>
+      </Container>
       <img src="/wide.png" />
-    </>
+    </Wrapper>
   )
 }
 

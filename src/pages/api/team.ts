@@ -7,7 +7,7 @@ const { COMMANDER_ROLE_ID, OPERATOR_ROLE_ID } = process.env
 
 let cachedTeam: [] = null
 
-async function fetchDevelopersTeam(): Promise<DevelopersTeamResponse[]> {
+async function fetchDevelopersTeam (): Promise<DevelopersTeamResponse[]> {
   if (cachedTeam) {
     return cachedTeam
   }

@@ -3,31 +3,31 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { DevelopersTeamResponse } from '../../responses'
 import Discord from '../../services/Discord'
 
+const { COMMANDER_ROLE_ID, OPERATOR_ROLE_ID } = process.env
+
 let cachedTeam: [] = null
 
-async function fetchDevelopersTeam (guildID = process.env.GUILD_ID): Promise<DevelopersTeamResponse[]> {
+async function fetchDevelopersTeam(): Promise<DevelopersTeamResponse[]> {
   if (cachedTeam) {
     return cachedTeam
   }
 
-  const roles = await Discord.request(`/guilds/${guildID}/roles`, {})
-  const members = await Discord.request(`/guilds/${guildID}/members`, {
-    query: { limit: 1000 }
-  })
+  const roles = await Discord.roles()
+  const members = await Discord.members()
 
   const team = members
-    .filter(({ roles }) => roles.includes(process.env.COMMANDER_ROLE_ID))
+    .filter(({ roles }) => roles.includes(COMMANDER_ROLE_ID))
     .map((member) => {
       const {
         user: { id, username, discriminator, avatar }
       } = member
-      const _roles = member.roles
-        .filter((roleID) => process.env.OPERATOR_ROLE_ID !== roleID)
+      const memberRoles = member.roles
+        .filter((roleID) => roleID !== OPERATOR_ROLE_ID)
         .map((roleID) => roles.filter(({ id }) => id === roleID))
         .flat()
-      const departmentRole = _roles.find(
+      const departmentRole = memberRoles.find(
         ({ position }) =>
-          position === Math.max(..._roles.map(({ position }) => position))
+          position === Math.max(...memberRoles.map(({ position }) => position))
       )
 
       return {
@@ -40,7 +40,7 @@ async function fetchDevelopersTeam (guildID = process.env.GUILD_ID): Promise<Dev
           name: departmentRole.name,
           hexColor: `#${departmentRole.color.toString(16).padStart(6, 'f')}`
         },
-        roles: _roles.map(({ id, name }) => ({ id, name }))
+        roles: memberRoles.map(({ id, name }) => ({ id, name }))
       }
     })
 
@@ -49,10 +49,7 @@ async function fetchDevelopersTeam (guildID = process.env.GUILD_ID): Promise<Dev
   return team
 }
 
-export default async (
-  request: NextApiRequest,
-  response: NextApiResponse
-) => {
+export default async (request: NextApiRequest, response: NextApiResponse) => {
   try {
     const team = await fetchDevelopersTeam()
 

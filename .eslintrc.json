@@ -41,13 +41,11 @@
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
+    "no-use-before-define": "off",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "error",
-    "space-before-function-paren": ["error", "never"],
-    "prettier": {
-      "space-before-function-paren": ["error", "never"]
-    },
-    "prettier/prettier": "error",
+    "@typescript-eslint/no-unused-vars": "off",
+    "space-before-function-paren": ["error", "always"],
+    "prettier/prettier": "off",
     "react/prop-types": "off"
   }
 }

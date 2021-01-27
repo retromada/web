@@ -5,7 +5,7 @@ import Discord from '../../services/Discord'
 
 const { COMMANDER_ROLE_ID, OPERATOR_ROLE_ID } = process.env
 
-let cachedTeam: [] = null
+let cachedTeam: DevelopersTeamResponse[] = null
 
 async function fetchDevelopersTeam (): Promise<DevelopersTeamResponse[]> {
   if (cachedTeam) {

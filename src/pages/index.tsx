@@ -1,11 +1,11 @@
 import React from 'react'
 
-import wide from '../assets/wide.svg'
+import wide from '../assets/svg/wide.svg'
 import { useFetch } from '../hooks/useFetch'
 import { DevelopersTeamResponse } from '../responses'
 import { Wrapper, Container, Team } from '../styles/pages/Main'
 
-const Main: React.FC = () => {
+export default function Home (): JSX.Element {
   const { data } = useFetch<DevelopersTeamResponse[]>('/api/team')
 
   return (
@@ -29,5 +29,3 @@ const Main: React.FC = () => {
     </Wrapper>
   )
 }
-
-export default Main

@@ -1,14 +1,15 @@
 import React from 'react'
-import Head from 'next/head'
-import { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components'
 
-import { SEO } from '../utils/Constants'
+import { AppProps } from 'next/app'
+import Head from 'next/head'
+
+import { ThemeProvider } from 'styled-components'
 
 import GlobalStyle from '../styles/global'
 import theme from '../styles/theme'
+import { SEO } from '../utils/Constants'
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+export default function MyApp ({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -19,5 +20,3 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     </ThemeProvider>
   )
 }
-
-export default MyApp

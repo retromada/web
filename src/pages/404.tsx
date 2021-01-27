@@ -1,9 +1,10 @@
 import React from 'react'
+
 import Head from 'next/head'
 
 import { Text } from '../styles/pages/404'
 
-const NotFound: React.FC = () => {
+export default function NotFound (): JSX.Element {
   const message = 'Not found'
 
   return (
@@ -15,5 +16,3 @@ const NotFound: React.FC = () => {
     </>
   )
 }
-
-export default NotFound

@@ -10,7 +10,7 @@ import Document, {
 
 import { SEO } from '../utils/Constants'
 
-class MyDocument extends Document<DocumentProps> {
+export default class MyDocument extends Document<DocumentProps> {
   render (): JSX.Element {
     return (
       <Html lang="en">
@@ -35,5 +35,3 @@ class MyDocument extends Document<DocumentProps> {
     )
   }
 }
-
-export default MyDocument

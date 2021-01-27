@@ -1,3 +1,4 @@
+import { DiscordMemberResponse, DiscordRoleResponse } from '../responses'
 import { FetcherOptions } from '../types'
 import fetcher from '../utils/fetcher'
 
@@ -5,14 +6,18 @@ const API_URL = 'https://discordapp.com/api'
 const { DISCORD_TOKEN, GUILD_ID } = process.env
 
 export default class Discord {
-  public static roles (guildID: string = GUILD_ID): Promise<[]> {
-    return this._request(`/guilds/${guildID}/roles`)
-  }
-
-  public static members (guildID: string = GUILD_ID): Promise<[]> {
+  public static members (
+    guildID: string = GUILD_ID
+  ): Promise<DiscordMemberResponse[]> {
     return this._request(`/guilds/${guildID}/members`, {
       query: { limit: 1000 }
     })
+  }
+
+  public static roles (
+    guildID: string = GUILD_ID
+  ): Promise<DiscordRoleResponse[]> {
+    return this._request(`/guilds/${guildID}/roles`)
   }
 
   public static _request (

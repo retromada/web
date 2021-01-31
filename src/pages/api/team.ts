@@ -49,7 +49,10 @@ async function fetchDevelopersTeam (): Promise<TeamDeveloperResponse[]> {
   return team
 }
 
-export default async (request: NextApiRequest, response: NextApiResponse) => {
+export default async (
+  request: NextApiRequest,
+  response: NextApiResponse
+): Promise<void> => {
   try {
     const team = await fetchDevelopersTeam()
 

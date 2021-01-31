@@ -1,2 +1,2 @@
-export * from './developers.team.response'
+export * from './developer.team.response'
 export * from './discord.services.response'

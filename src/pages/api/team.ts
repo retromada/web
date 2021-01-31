@@ -1,13 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { DevelopersTeamResponse } from '../../responses'
+import { TeamDeveloperResponse } from '../../responses'
 import Discord from '../../services/Discord'
 
 const { COMMANDER_ROLE_ID, OPERATOR_ROLE_ID } = process.env
 
-let cachedTeam: DevelopersTeamResponse[] = null
+let cachedTeam: TeamDeveloperResponse[] = null
 
-async function fetchDevelopersTeam (): Promise<DevelopersTeamResponse[]> {
+async function fetchDevelopersTeam (): Promise<TeamDeveloperResponse[]> {
   if (cachedTeam) {
     return cachedTeam
   }

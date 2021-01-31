@@ -38,7 +38,7 @@ async function fetchDevelopersTeam (): Promise<TeamDeveloperResponse[]> {
         department: {
           acronym: departmentRole.name.replace(/[a-z]+[^]/g, ''),
           name: departmentRole.name,
-          hexColor: `#${departmentRole.color.toString(16).padStart(6, 'f')}`
+          color: departmentRole.color
         },
         roles: memberRoles.map(({ id, name }) => ({ id, name }))
       }

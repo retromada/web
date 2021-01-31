@@ -2,11 +2,11 @@ import React from 'react'
 
 import wide from '../assets/svg/wide.svg'
 import { useFetch } from '../hooks/useFetch'
-import { DevelopersTeamResponse } from '../responses'
+import { TeamDeveloperResponse } from '../responses'
 import { Wrapper, Container, Team } from '../styles/pages/Main'
 
 export default function Home (): JSX.Element {
-  const { data } = useFetch<DevelopersTeamResponse[]>('/api/team')
+  const { data } = useFetch<TeamDeveloperResponse[]>('/api/team')
 
   return (
     <Wrapper>
@@ -15,7 +15,10 @@ export default function Home (): JSX.Element {
           {data?.map((dev) => (
             <p key={dev.id}>
               <strong
-                style={{ color: dev.department.hexColor }}
+                style={{
+                  color:
+                    '#' + dev.department.color.toString(16).padStart(6, 'f')
+                }}
                 title={dev.department.name}
               >
                 {dev.department.acronym}

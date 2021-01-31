@@ -1,7 +1,7 @@
 export interface TeamDeveloperDepartment {
   acronym: string
   name: string
-  hexColor: string
+  color: number
 }
 
 export interface TeamDeveloperRole {

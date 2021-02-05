@@ -3,7 +3,7 @@ import React from 'react'
 import wide from '../assets/svg/wide.svg'
 import { useFetch } from '../hooks/useFetch'
 import { TeamDeveloperResponse } from '../responses'
-import { Wrapper, Container, Team } from '../styles/pages/Main'
+import { Wrapper, Container, Team } from '../styles/pages/Home'
 
 export default function Home (): JSX.Element {
   const { data } = useFetch<TeamDeveloperResponse[]>('/api/team')
@@ -27,8 +27,8 @@ export default function Home (): JSX.Element {
             </p>
           ))}
         </Team>
+        <img src={wide} />
       </Container>
-      <img src={wide} />
     </Wrapper>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import wide from '../assets/svg/wide.svg'
+import Wide from '../assets/svg/wide.svg'
 import { useFetch } from '../hooks/useFetch'
 import { TeamDeveloperResponse } from '../responses'
 import { Wrapper, Container, Team } from '../styles/pages/Home'
@@ -27,7 +27,7 @@ export default function Home (): JSX.Element {
             </p>
           ))}
         </Team>
-        <img src={wide} />
+        <Wide />
       </Container>
     </Wrapper>
   )

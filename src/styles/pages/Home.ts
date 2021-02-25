@@ -1,11 +1,5 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`
-
 export const Container = styled.div`
   width: 100vw;
   max-width: 600px;
@@ -13,11 +7,6 @@ export const Container = styled.div`
   position: relative;
   cursor: default;
   user-select: none;
-
-  img {
-    width: 100vw;
-    max-width: 600px;
-  }
 `
 
 export const Team = styled.div`

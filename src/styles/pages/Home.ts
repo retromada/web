@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.main`
   width: 100vw;
   max-width: 600px;
   max-height: 800px;

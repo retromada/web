@@ -11,13 +11,11 @@ export const Item = styled.div`
   display: table-cell;
 `
 
-export const StyledLink = styled.a`
+export const StyledLink = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  text-decoration: none;
   cursor: pointer;
 
   &:hover {

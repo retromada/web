@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Header from './Header'
 import { Container } from '../styles/components/Wrapper'
+import Header from './Header'
 
 export default function Wrapper ({ children }) {
   return (

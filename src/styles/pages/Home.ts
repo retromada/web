@@ -7,6 +7,10 @@ export const Container = styled.main`
   position: relative;
   cursor: default;
   user-select: none;
+
+  svg {
+    width: 100%;
+  }
 `
 
 export const Team = styled.div`

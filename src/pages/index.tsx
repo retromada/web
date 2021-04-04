@@ -25,7 +25,7 @@ export default function Home (): JSX.Element {
           </p>
         ))}
       </Team>
-      <Wide style={{ width: '100%', maxWidth: '600px' }} />
+      <Wide />
     </Container>
   )
 }

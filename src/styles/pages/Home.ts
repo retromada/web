@@ -1,12 +1,6 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`
-
-export const Container = styled.div`
+export const Container = styled.main`
   width: 100vw;
   max-width: 600px;
   max-height: 800px;
@@ -14,9 +8,8 @@ export const Container = styled.div`
   cursor: default;
   user-select: none;
 
-  img {
-    width: 100vw;
-    max-width: 600px;
+  svg {
+    width: 100%;
   }
 `
 

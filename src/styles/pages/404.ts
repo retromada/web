@@ -1,11 +1,14 @@
 import styled from 'styled-components'
 
-export const Text = styled.h1`
-  margin: 0;
+export const Container = styled.main`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  font-size: 18px;
-  font-weight: normal;
+`
+
+export const Text = styled.h1`
+  font-size: 33px;
+  font-weight: bold;
+  margin-bottom: 15px;
 `

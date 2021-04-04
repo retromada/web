@@ -1,18 +1,25 @@
 import React from 'react'
 
 import Head from 'next/head'
+import Link from 'next/link'
 
-import { Text } from '../styles/pages/404'
+import Button from '../components/Button'
+import { Container, Text } from '../styles/pages/404'
 
 export default function NotFound (): JSX.Element {
-  const message = 'Not found'
+  const message = '??? ?????'
 
   return (
     <>
       <Head>
         <title>{message}</title>
       </Head>
-      <Text>{message}</Text>
+      <Container>
+        <Text>{message}</Text>
+        <Link href='/'>
+          <Button>?? ????</Button>
+        </Link>
+      </Container>
     </>
   )
 }

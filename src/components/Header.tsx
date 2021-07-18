@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Home, Info } from '@styled-icons/material-sharp'
+import { MdHome, MdInfo } from 'react-icons/md'
 
 const Header: React.FC = () => {
   const iconSize = 24
@@ -9,7 +9,7 @@ const Header: React.FC = () => {
     <header className="h-16 flex">
       <a className="w-full hover:bg-white hover:bg-opacity-20 pointer" href="/">
         <div className="h-full flex items-center justify-center">
-          <Home size={iconSize} title="Home" />
+          <MdHome size={iconSize} title="Home" />
         </div>
       </a>
       <a
@@ -17,7 +17,7 @@ const Header: React.FC = () => {
         href="/about"
       >
         <div className="h-full flex items-center justify-center">
-          <Info size={iconSize} title="About" />
+          <MdInfo size={iconSize} title="About" />
         </div>
       </a>
     </header>

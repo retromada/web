@@ -18,15 +18,9 @@
       "jsx": true
     },
     "ecmaVersion": 12,
-    "project": "./tsconfig.json",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "import-helpers",
-    "prettier"
-  ],
+  "plugins": ["react", "@typescript-eslint", "import-helpers", "prettier"],
   "rules": {
     "import-helpers/order-imports": [
       "warn",

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { MdHome, MdInfo } from 'react-icons/md'
 
 const Header: React.FC = () => {

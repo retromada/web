@@ -8,9 +8,6 @@ module.exports = {
       black: '#000'
     }),
     extend: {
-      backgroundImage: (theme) => ({
-        wide: "url('../assets/png/wide-placeholder.png')"
-      }),
       height: (theme) => ({
         wide: '50rem',
         'wide-2x': '100rem'

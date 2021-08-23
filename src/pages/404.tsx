@@ -1,12 +1,10 @@
 import React from 'react'
 
 import Head from 'next/head'
-import Link from 'next/link'
 
 import Button from '../components/Button'
-import { Container, Text } from '../styles/pages/404'
 
-export default function NotFound (): JSX.Element {
+const NotFound: React.FC = () => {
   const message = '??? ?????'
 
   return (
@@ -14,12 +12,14 @@ export default function NotFound (): JSX.Element {
       <Head>
         <title>{message}</title>
       </Head>
-      <Container>
-        <Text>{message}</Text>
-        <Link href='/'>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <h1 className="text-3xl font-bold mb-4">{message}</h1>
+        <a href="/">
           <Button>?? ????</Button>
-        </Link>
-      </Container>
+        </a>
+      </div>
     </>
   )
 }
+
+export default NotFound

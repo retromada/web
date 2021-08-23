@@ -8,9 +8,7 @@
     "standard",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "prettier/standard",
-    "prettier/react"
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -18,15 +16,9 @@
       "jsx": true
     },
     "ecmaVersion": 12,
-    "project": "./tsconfig.json",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "import-helpers",
-    "prettier"
-  ],
+  "plugins": ["react", "@typescript-eslint", "import-helpers", "prettier"],
   "rules": {
     "import-helpers/order-imports": [
       "warn",

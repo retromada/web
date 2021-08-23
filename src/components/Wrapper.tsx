@@ -1,13 +1,12 @@
 import React from 'react'
 
-import { Container } from '../styles/components/Wrapper'
 import Header from './Header'
 
-export default function Wrapper ({ children }) {
-  return (
-    <Container>
-      <Header />
-      {children}
-    </Container>
-  )
-}
+const Wrapper: React.FC = ({ children }) => (
+  <div className="md:container mx-auto md:max-w-xl text-white font-sans">
+    <Header />
+    {children}
+  </div>
+)
+
+export default Wrapper

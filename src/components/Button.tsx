@@ -1,11 +1,9 @@
 import React from 'react'
 
-import { StyledButton } from '../styles/components/Button'
+const Button: React.FC = ({ children, ...rest }) => (
+  <button className="w-full h-7 text-white border border-gray-300 hover:text-black hover:bg-white">
+    {children}
+  </button>
+)
 
-export default function Button ({ children, ...rest }) {
-  return (
-    <StyledButton type='button' {...rest}>
-      {children}
-    </StyledButton>
-  )
-}
+export default Button

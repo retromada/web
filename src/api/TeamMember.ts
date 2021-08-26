@@ -1,6 +1,6 @@
-import { TeamDeveloperMember } from '../interfaces'
-import Member from '../services/Discord/structures/Member'
-import Role from '../services/Discord/structures/Role'
+import { TeamDeveloperMember } from '@interfaces'
+import Member from '@services/Discord/structures/Member'
+import Role from '@services/Discord/structures/Role'
 
 class TeamMember extends Member {
   department: Department

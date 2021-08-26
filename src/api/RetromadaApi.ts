@@ -1,5 +1,6 @@
-import Discord from '../services/Discord'
-import Role from '../services/Discord/structures/Role'
+import Discord from '@services/Discord'
+import Role from '@services/Discord/structures/Role'
+
 import TeamMember, { Department } from './TeamMember'
 
 const { COMMANDER_ROLE_ID, OPERATOR_ROLE_ID } = process.env

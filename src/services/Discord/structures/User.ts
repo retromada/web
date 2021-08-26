@@ -1,4 +1,4 @@
-import { DiscordUser } from '../../../interfaces'
+import { DiscordUser } from '@interfaces'
 
 class User {
   id: string

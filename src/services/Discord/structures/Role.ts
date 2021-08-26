@@ -1,4 +1,4 @@
-import { DiscordRole } from '../../../interfaces'
+import { DiscordRole } from '@interfaces'
 
 class Role {
   id: string

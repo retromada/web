@@ -1,4 +1,5 @@
-import { FetcherOptions } from '../../interfaces'
+import { FetcherOptions } from '@interfaces'
+
 import fetcher from '../../utils/fetcher'
 import Member from './structures/Member'
 import Role from './structures/Role'

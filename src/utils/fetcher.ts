@@ -1,4 +1,4 @@
-import { FetcherOptions } from '../interfaces'
+import { FetcherOptions } from '@interfaces'
 
 function buildQuery (object: Object): string {
   return object ? Object.entries(object).map((parameter) => parameter.join('=')).join('&') : ''

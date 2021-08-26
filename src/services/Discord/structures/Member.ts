@@ -1,4 +1,5 @@
-import { DiscordMember } from '../../../interfaces'
+import { DiscordMember } from '@interfaces'
+
 import User from './User'
 
 class Member {

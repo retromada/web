@@ -1,4 +1,4 @@
-import User from '../services/Discord/structures/User'
+import User from '@services/Discord/structures/User'
 
 export interface DiscordRole {
   id: string

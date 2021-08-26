@@ -8,7 +8,9 @@ class TeamMember implements TeamDeveloperMember {
   roles: Role[]
 
   constructor (data: TeamDeveloperMember) {
+    this.user = data.user
     this.department = data.department
+    this.roles = data.roles
   }
 }
 

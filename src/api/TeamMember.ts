@@ -1,13 +1,13 @@
 import { TeamDeveloperMember } from '@interfaces'
-import Member from '@services/Discord/structures/Member'
 import Role from '@services/Discord/structures/Role'
+import User from '@services/Discord/structures/User'
 
-class TeamMember extends Member {
+class TeamMember implements TeamDeveloperMember {
+  user?: User
   department: Department
+  roles: Role[]
 
   constructor (data: TeamDeveloperMember) {
-    super(data)
-
     this.department = data.department
   }
 }

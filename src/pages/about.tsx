@@ -1,10 +1,10 @@
 import React from 'react'
 
+import TeamMember from '../api/TeamMember'
 import { useFetch } from '../hooks/useFetch'
-import { TeamDeveloperResponse } from '../responses'
 
 const About: React.FC = () => {
-  const { data } = useFetch<TeamDeveloperResponse[]>('/api/team')
+  const { data } = useFetch<TeamMember[]>('/api/team')
 
   return (
     <div className="flex flex-col">
@@ -12,19 +12,22 @@ const About: React.FC = () => {
         <h2 className="text-lg font-semibold mb-3">RMCYBERCOM</h2>
         <div className="inline-flex flex-wrap justify-center">
           {data?.map((dev) => (
-            <div key={dev.id} className="h-full flex items-center space-x-3 p-3 transform hover:scale-110 transition ease-out duration-300 cursor-default hover:bg-white hover:bg-opacity-5">
+            <div
+              key={dev.user.id}
+              className="h-full flex items-center space-x-3 p-3 transform hover:scale-110 transition ease-out duration-300 cursor-default hover:bg-white hover:bg-opacity-5"
+            >
               <img
-                src={`https://cdn.discordapp.com/avatars/${dev.id}/${dev.avatar}.png?size=64`}
-                alt={dev.username}
+                className="h-16"
+                src={dev.user.display_avatar_url}
+                alt={dev.user.username}
               />
               <span
                 className="font-semibold"
                 style={{
-                  color:
-                    '#' + dev.department.color.toString(16).padStart(6, 'f')
+                  color: dev.department.hex_color
                 }}
               >
-                {dev.username}
+                {dev.user.username}
               </span>
             </div>
           ))}

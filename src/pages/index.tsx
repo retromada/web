@@ -1,10 +1,10 @@
 import React from 'react'
 
+import TeamMember from '../api/TeamMember'
 import { useFetch } from '../hooks/useFetch'
-import { TeamDeveloperResponse } from '../responses'
 
 const Home: React.FC = () => {
-  const { data } = useFetch<TeamDeveloperResponse[]>('/api/team')
+  const { data } = useFetch<TeamMember[]>('/api/team')
 
   return (
     <div className="h-wide-2x md:h-wide flex">
@@ -21,16 +21,15 @@ const Home: React.FC = () => {
           <div className="w-screen md:w-auto h-full md:h-auto md:absolute md:mt-20 md:ml-4 text-2xl md:text-sm">
             <div className="h-full md:h-auto flex flex-col items-center justify-center md:-space-y-1.5">
               {data?.map((dev) => (
-                <div key={dev.id} className="space-x-1">
+                <div key={dev.user.id} className="space-x-1">
                   <strong
                     style={{
-                      color:
-                        '#' + dev.department.color.toString(16).padStart(6, 'f')
+                      color: dev.department.hex_color
                     }}
                   >
                     {dev.department.acronym}
                   </strong>
-                  <span>{dev.username}</span>
+                  <span>{dev.user.username}</span>
                 </div>
               ))}
             </div>

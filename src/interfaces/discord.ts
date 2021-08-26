@@ -1,6 +1,6 @@
-/* eslint camelcase: "off" */
+import User from '@services/Discord/structures/User'
 
-export interface DiscordRoleResponse {
+export interface DiscordRole {
   id: string
   name: string
   color: number
@@ -11,7 +11,7 @@ export interface DiscordRoleResponse {
   mentionable: boolean
 }
 
-export interface DiscordUserResponse {
+export interface DiscordUser {
   id: string
   username: string
   discriminator: string
@@ -19,6 +19,8 @@ export interface DiscordUserResponse {
   bot?: boolean
   system?: boolean
   mfa_enabled?: boolean
+  banner?: string
+  accent_color?: number
   locale?: string
   verified?: boolean
   email?: string
@@ -27,8 +29,8 @@ export interface DiscordUserResponse {
   public_flags?: number
 }
 
-export interface DiscordMemberResponse {
-  user?: DiscordUserResponse
+export interface DiscordMember {
+  user?: User
   nick?: string
   roles: string[]
   joined_at: string

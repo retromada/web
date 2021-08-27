@@ -1,10 +1,11 @@
 import React from 'react'
 
-import TeamMember from '../api/TeamMember'
+import { TeamDeveloperMember } from '@interfaces'
+
 import { useFetch } from '../hooks/useFetch'
 
 const Home: React.FC = () => {
-  const { data } = useFetch<TeamMember[]>('/api/team')
+  const { data } = useFetch<TeamDeveloperMember[]>('/api/team')
 
   return (
     <div className="h-wide-2x md:h-wide flex">

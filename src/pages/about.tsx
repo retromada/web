@@ -11,7 +11,7 @@ const About: React.FC = () => {
     <div className="flex flex-col">
       <div className="flex flex-col items-center my-5">
         <h2 className="text-lg font-semibold mb-3">RMCYBERCOM</h2>
-        <div className="inline-flex flex-wrap justify-center">
+        <div className="inline-flex flex-wrap justify-center space-x-2">
           {data?.map((dev) => (
             <div
               key={dev.user.id}

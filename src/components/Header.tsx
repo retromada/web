@@ -6,13 +6,13 @@ const Header: React.FC = () => {
 
   return (
     <header className="h-16 flex">
-      <a className="w-full hover:bg-white hover:bg-opacity-20 pointer" href="/">
+      <a className="w-full hover:bg-white hover:bg-opacity-5 pointer" href="/">
         <div className="h-full flex items-center justify-center">
           <MdHome size={iconSize} title="Home" />
         </div>
       </a>
       <a
-        className="w-full hover:bg-white hover:bg-opacity-20 pointer"
+        className="w-full hover:bg-white hover:bg-opacity-5 pointer"
         href="/about"
       >
         <div className="h-full flex items-center justify-center">

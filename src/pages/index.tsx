@@ -1,10 +1,11 @@
 import React from 'react'
 
-import TeamMember from '../api/TeamMember'
+import { TeamDeveloperMember } from '@interfaces'
+
 import { useFetch } from '../hooks/useFetch'
 
 const Home: React.FC = () => {
-  const { data } = useFetch<TeamMember[]>('/api/team')
+  const { data } = useFetch<TeamDeveloperMember[]>('/api/team')
 
   return (
     <div className="h-wide-2x md:h-wide flex">
@@ -19,7 +20,7 @@ const Home: React.FC = () => {
         </div>
         <div className="md:w-52 md:row-start-2 row-span-1 md:row-span-2 col-span-1">
           <div className="w-screen md:w-auto h-full md:h-auto md:absolute md:mt-20 md:ml-4 text-2xl md:text-sm">
-            <div className="h-full md:h-auto flex flex-col items-center justify-center md:-space-y-1.5">
+            <div className="h-full md:h-auto flex flex-col items-center md:items-start justify-center">
               {data?.map((dev) => (
                 <div key={dev.user.id} className="space-x-1">
                   <strong

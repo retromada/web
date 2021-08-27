@@ -1,16 +1,31 @@
 import React from 'react'
+import { IconType } from 'react-icons'
+import { FaInstagram, FaMastodon, FaTumblr, FaTwitter } from 'react-icons/fa'
 
-import TeamMember from '../api/TeamMember'
+import { TeamDeveloperMember } from '@interfaces'
+
 import { useFetch } from '../hooks/useFetch'
 
+interface SocialMedia {
+  title: string
+  icon: IconType
+}
+
 const About: React.FC = () => {
-  const { data } = useFetch<TeamMember[]>('/api/team')
+  const { data } = useFetch<TeamDeveloperMember[]>('/api/team')
+  const iconSize = 24
+  const socialMedias: SocialMedia[] = [
+    { title: 'Instagram', icon: FaInstagram },
+    { title: 'Twitter', icon: FaTwitter },
+    { title: 'Tumblr', icon: FaTumblr },
+    { title: 'Mastodon', icon: FaMastodon }
+  ]
 
   return (
     <div className="flex flex-col">
       <div className="flex flex-col items-center my-5">
         <h2 className="text-lg font-semibold mb-3">RMCYBERCOM</h2>
-        <div className="inline-flex flex-wrap justify-center">
+        <div className="inline-flex flex-wrap justify-center space-x-2">
           {data?.map((dev) => (
             <div
               key={dev.user.id}
@@ -33,7 +48,7 @@ const About: React.FC = () => {
           ))}
         </div>
       </div>
-      <footer className="h-24 flex items-center text-gray-300 text-opacity-75 tracking-tight">
+      <footer className="h-20 flex flex-col items-center text-gray-300 text-opacity-75 tracking-tight">
         <nav className="flex flex-1 justify-center">
           <div className="flex items-center">
             <a className="px-1 hover:text-white" href="/github">
@@ -46,6 +61,17 @@ const About: React.FC = () => {
               License: <strong>BSD 4 Clause</strong>
             </span>
           </div>
+        </nav>
+        <nav className="flex flex-1 items-center space-x-2">
+          {socialMedias.map((media, index) => (
+            <a
+              key={index}
+              className="hover:text-white"
+              href={'/' + media.title.toLowerCase()}
+            >
+              <media.icon size={iconSize} title={media.title} />
+            </a>
+          ))}
         </nav>
       </footer>
     </div>

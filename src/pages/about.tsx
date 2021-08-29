@@ -1,6 +1,12 @@
 import React from 'react'
 import { IconType } from 'react-icons'
-import { FaInstagram, FaMastodon, FaTumblr, FaTwitter } from 'react-icons/fa'
+import {
+  FaInstagram,
+  FaMastodon,
+  FaSteam,
+  FaTumblr,
+  FaTwitter
+} from 'react-icons/fa'
 
 import { TeamDeveloperMember } from '@interfaces'
 
@@ -15,6 +21,7 @@ const About: React.FC = () => {
   const { data } = useFetch<TeamDeveloperMember[]>('/api/team')
   const iconSize = 24
   const socialMedias: SocialMedia[] = [
+    { title: 'Steam', icon: FaSteam },
     { title: 'Instagram', icon: FaInstagram },
     { title: 'Twitter', icon: FaTwitter },
     { title: 'Tumblr', icon: FaTumblr },

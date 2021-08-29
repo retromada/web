@@ -12,6 +12,11 @@ module.exports = {
         permanent: true
       },
       {
+        source: '/steam',
+        destination: 'https://steamcommunity.com/groups/retromada',
+        permanent: true
+      },
+      {
         source: '/instagram',
         destination: 'https://instagram.com/retromada_sys',
         permanent: true

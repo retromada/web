@@ -1,8 +1,7 @@
 import React from 'react'
 
 import { Link, IconBox } from '@styles/components/Header'
-
-import { Icons, IconSizes } from '../utils/Icons'
+import { Icons, IconSizes } from '@utils/Icons'
 
 const Header: React.FC = () => {
   return (

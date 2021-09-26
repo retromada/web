@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { TeamDeveloperMember } from '@interfaces'
+import { Icons, IconSizes } from '@utils/Icons'
 
 import { useFetch } from '../hooks/useFetch'
-import { Icons, IconSizes } from '../utils/Icons'
 
 const About: React.FC = () => {
   const { data } = useFetch<TeamDeveloperMember[]>('/api/team')

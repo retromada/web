@@ -8,7 +8,7 @@ import Document, {
   NextScript
 } from 'next/document'
 
-import { SEO } from '../utils/Constants'
+import { SEO } from '@utils/Constants'
 
 class MyDocument extends Document<DocumentProps> {
   render (): JSX.Element {

@@ -3522,6 +3522,13 @@ table@^6.0.9:
     string-width "^4.2.0"
     strip-ansi "^6.0.0"
 
+tailed-js@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/tailed-js/-/tailed-js-1.0.0.tgz#92e5bdf0d889c905fd7fe34cf591a9b9ed7933fe"
+  integrity sha512-1c/BGxc4QTqjPlQ//jtbxX/eYHGFzXoihAm2j/ksqz/aOT+nvsq90ELmJmRaH0GZtXrzesLqJlODRpVRRyveSw==
+  dependencies:
+    react "^17.0.2"
+
 tailwindcss@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-2.2.4.tgz#6a2e259b1e26125aeaa7cdc479963fd217c308b0"

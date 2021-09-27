@@ -1,32 +1,12 @@
 import React from 'react'
-import { IconType } from 'react-icons'
-import {
-  FaInstagram,
-  FaMastodon,
-  FaSteam,
-  FaTumblr,
-  FaTwitter
-} from 'react-icons/fa'
 
 import { TeamDeveloperMember } from '@interfaces'
+import { Icons, IconSizes } from '@utils/Icons'
 
 import { useFetch } from '../hooks/useFetch'
 
-interface SocialMedia {
-  title: string
-  icon: IconType
-}
-
 const About: React.FC = () => {
   const { data } = useFetch<TeamDeveloperMember[]>('/api/team')
-  const iconSize = 24
-  const socialMedias: SocialMedia[] = [
-    { title: 'Steam', icon: FaSteam },
-    { title: 'Instagram', icon: FaInstagram },
-    { title: 'Twitter', icon: FaTwitter },
-    { title: 'Tumblr', icon: FaTumblr },
-    { title: 'Mastodon', icon: FaMastodon }
-  ]
 
   return (
     <div className="flex flex-col">
@@ -70,13 +50,13 @@ const About: React.FC = () => {
           </div>
         </nav>
         <nav className="flex flex-1 items-center space-x-2">
-          {socialMedias.map((media, index) => (
+          {Icons.SocialMedias.map(({ title, Icon }, index) => (
             <a
               key={index}
               className="hover:text-white"
-              href={'/' + media.title.toLowerCase()}
+              href={'/' + title.toLowerCase()}
             >
-              <media.icon size={iconSize} title={media.title} />
+              <Icon size={IconSizes.medium} title={title} />
             </a>
           ))}
         </nav>

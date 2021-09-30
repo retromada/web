@@ -24,9 +24,11 @@ const Home: React.FC = () => {
               {data?.map((dev) => (
                 <div key={dev.user.id} className="space-x-1">
                   <strong
+                    className="cursor-default"
                     style={{
                       color: dev.department.hex_color
                     }}
+                    title={dev.department.name}
                   >
                     {dev.department.acronym}
                   </strong>

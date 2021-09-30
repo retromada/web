@@ -1,5 +1,8 @@
-module.exports = {
-  async redirects () {
+const withPlugins = require('next-compose-plugins')
+const withMDX = require('@next/mdx')()
+
+module.exports = withPlugins([[withMDX]], {
+  async redirects() {
     return [
       {
         source: '/github',
@@ -38,4 +41,4 @@ module.exports = {
       }
     ]
   }
-}
+})

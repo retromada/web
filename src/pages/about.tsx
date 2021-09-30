@@ -1,8 +1,11 @@
 import React from 'react'
 
 import { TeamDeveloperMember } from '@interfaces'
+import { MDXProvider } from '@mdx-js/react'
+import { Text } from '@styles/markdown'
 import { Icons, IconSizes } from '@utils/Icons'
 
+import Markdown from '../docs/about.mdx'
 import { useFetch } from '../hooks/useFetch'
 
 const About: React.FC = () => {
@@ -10,6 +13,11 @@ const About: React.FC = () => {
 
   return (
     <div className="flex flex-col">
+      <div className="p-3">
+        <MDXProvider components={{ p: Text }}>
+          <Markdown />
+        </MDXProvider>
+      </div>
       <div className="flex flex-col items-center my-5">
         <h2 className="text-lg font-semibold mb-3">RMCYBERCOM</h2>
         <div className="inline-flex flex-wrap justify-center space-x-2">

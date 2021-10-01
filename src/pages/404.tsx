@@ -2,17 +2,24 @@ import React from 'react'
 
 import Head from 'next/head'
 
-import { Text } from '../styles/pages/404'
+import Button from '@components/Button'
 
-export default function NotFound (): JSX.Element {
-  const message = 'Not found'
+const NotFound: React.FC = () => {
+  const message = '??? ?????'
 
   return (
     <>
       <Head>
         <title>{message}</title>
       </Head>
-      <Text>{message}</Text>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <h1 className="text-3xl font-bold mb-4">{message}</h1>
+        <a href="/">
+          <Button>?? ????</Button>
+        </a>
+      </div>
     </>
   )
 }
+
+export default NotFound
